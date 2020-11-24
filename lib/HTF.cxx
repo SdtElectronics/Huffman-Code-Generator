@@ -6,7 +6,7 @@
 
 #include <algorithm>
 #include <sstream>
-#include <stdio.h>
+#include <string.h>
 #include "HTF.h"
 
 HFEnc::HTNode::HTNode(double prob, int val): _val(val), _prob(prob){};
@@ -44,28 +44,6 @@ void HFEnc::setNode(std::vector<nodeItr>::iterator& it, int val){
 	++it;
 }
 
-void HFEnc::build(){	
-	auto beg = nodeIts.begin();
-    size_t i  = syms;
-    const size_t bSize = _bits.size();
-    while(1){
-        std::sort(beg, nodeIts.end(), HTNode::nodeItrCmp);
-        double prob = 0;
-        appendNode();
-        for(size_t j = 0; j != std::min(i, bSize); ++j){
-            printf("a %d\n", j);
-            prob += (*beg)->getProb();
-            setNode(beg, _bits[j]);
-        }
-		nodes.back().setProb(prob);
-        if (i <= bSize){
-            break;
-        }
-        i -= (bSize - 1);
-        printf("b %d\n", i);
-    }
-}
-
 //TODO: decouple code generation from trace
 std::string HFEnc::trace(const HTNode& node) const{	
 	nodeItr it = node._parent;
@@ -77,10 +55,6 @@ std::string HFEnc::trace(const HTNode& node) const{
 	}
 	std::string tmp = code.str();
 	return std::string(tmp.rbegin(), tmp.rend());
-}
-
-const char* HFEnc::getCode(size_t ind) const{
-    return trace(nodes[ind]).c_str();
 }
 
 std::vector<std::string> HFEnc::operator()(){

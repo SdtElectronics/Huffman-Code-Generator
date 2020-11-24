@@ -14,7 +14,6 @@ class HFEnc{
         template <typename T>
         HFEnc(const T& prob, const std::vector<int>& bits = std::vector<int>{1, 0});
         std::vector<std::string> operator() ();
-        const char *getCode(size_t ind) const;
         inline void build();
 
     private:
@@ -63,3 +62,22 @@ HFEnc::HFEnc(const T& probs, const std::vector<int>& bits): syms(probs.size()),
         appendNode(static_cast<double>(prob));
     }
 };
+
+
+void HFEnc::build(){	
+	auto beg = nodeIts.begin();
+    size_t i  = syms;
+    const size_t bSize = _bits.size();
+    while(1){
+        std::sort(beg, nodeIts.end(), HTNode::nodeItrCmp);
+        double prob = 0;
+        appendNode();
+        for(size_t j = 0; j != std::min(i, bSize); ++j){
+            prob += (*beg)->getProb();
+            setNode(beg, _bits[j]);
+        }
+		nodes.back().setProb(prob);
+        if (i <= bSize) break;
+        i -= (bSize - 1);
+    }
+}
