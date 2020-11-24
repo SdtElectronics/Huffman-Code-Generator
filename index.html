@@ -2,16 +2,50 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8"> 
-    <title>Title</title> 
+    <title>Huffman Code Generator</title> 
     <link rel = "stylesheet" href="./style.css"/> 
 
 </head> 
 
 <body> 
+    <div id = "cont">
+        <div id = "head">
+            <p id = "tt">Huffman Code Generator</p>
+            <p id = "pw">Powered by:</p>
+            <img src="res/WAbanner.jpg"/>
+        </div>
+        
+        <div class = "in">
+            <span contenteditable = false class = "inTitile">Symbols:</span>
+            <span id = "symsIn" class = "inText" contentEditable = "true" placeholder = "e.g: 1, 0 or 2, 1, 0">
+                1, 0
+            </span>
+        </div>
+        <div class = "in">
+            <span contenteditable = false class = "inTitile">Probabilities:</span>
+            <span id = "probIn" class = "inText" contentEditable = "true" placeholder = "e.g: 0.5, 0.3, 0.2"></span>
+        </div>
+        <div id = "gen" class = "btn">
+            <p>Generate</p>
+        </div>
+        <div id = "out">
 
+        </div>
+        <div id = "cls" class = "btn">
+            <p>Clear</p>
+        </div>
+        <footer>
+            <p>Copyright © 2020 SdtElectronics</p>
+        </footer>
+    </div>
 </body> 
+
+<template id = "outRowTmpl">
+    <div id = "outRow" class = "orow">
+    </div>
+</template>
 
 <script async type="text/javascript" src="lib/HFC.js"></script>
 <script type="text/javascript" src="lib/wasmWrapper.es6"></script>
-
+<script type="text/javascript" src="main.es6"></script>
 </html>
