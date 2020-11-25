@@ -22,6 +22,18 @@ gen.onclick = ()=>{
     dsp.innerHTML = "";
     const probs = prb.textContent.split(",").map(prob => parseFloat(prob));
     const syms = sym.textContent.split(",").map(sym => parseInt(sym));
+    if (prb.textContent == "") {
+		alert("Please enter probabilities!");
+		return;
+	}
+    if (sym.textContent == "") {
+		alert("Please enter symbols!");
+		return;
+    }
+    if(probs.some(e => isNaN(e)) || syms.some(e => isNaN(e))){
+        alert("Please enter valid numbers!");
+		return;
+    }
     getHFC(probs, syms).forEach((code, i) => {
         const otr = otp.content.getElementById("outRow");
         otr.textContent = `${probs[i]}: ${code}`;

@@ -4,7 +4,7 @@
     }
 }
 
-@media screen and (min-width:960px){
+@media screen and (min-width:520px){
     :root {
         --cont-width: max(36vw, 520px);
     }
@@ -28,11 +28,13 @@ a:visited {
     font-size: 3.3vh;
     font-weight: 480;
     text-align: left;
+    position: relative;;
 }
 
 .inText {
-    display: inline-block;
-    width: calc(var(--cont-width) - 6em - 3vw);
+    display: block;
+    text-indent: 6.6em;
+    width: 93%;
     letter-spacing: -3px;
     font-family: "Courier New", Courier, monospace;
 }
@@ -43,12 +45,24 @@ a:visited {
 }
 
 .inTitile{
+    position: absolute;
+    top: 0.18em;
     display: inline-block;
     width: 6em;
 }
 
 .btn, #cont, footer{
     text-align: center;
+}
+
+.btn:hover, .in:hover{
+    background-color: rgb(27,134,219);
+    box-shadow: 0px 0px 1.5px #666;
+}
+
+.btn:active, .in:active{
+    background-color: rgb(101,79,240);
+    box-shadow: 0px 0px 2.1px #666;
 }
 
 .btn > p, footer > p{
@@ -105,7 +119,7 @@ html, body{
 }
 
 #tt{
-    font-size: 51px;
+    font-size: calc(var(--cont-width) * 0.09);
     font-weight: 630;
     
     margin: 4vh auto 2.7vh 8.4%;
@@ -115,7 +129,7 @@ html, body{
     font-size: 27.9px;
     color: #333;
     position: absolute;
-    top: calc(102px + 9vh);
+    top: calc(var(--cont-width) * 0.18 + 9vh);
     right: 11%;
     font-weight: 600;
     margin: 0;
@@ -130,6 +144,10 @@ html, body{
 
 #out{
     display: none;
+    box-shadow: 0px 0px 2.1px #666;
+    background-color: rgb(101,79,240);
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
 }
 
 #out:first-child{
