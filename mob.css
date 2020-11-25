@@ -1,0 +1,220 @@
+:root {
+    --cont-width: 100vw;
+}
+
+#tt{
+    font-size: 9vw;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+.div{
+    padding: 0px;
+    height: auto;
+}
+
+.in, .orow{
+    padding: 1.5vh 1.5vw 1.5vh 1.5vw;
+    font-size: 3.3vh;
+    font-weight: 480;
+    text-align: left;
+    position: relative;;
+}
+
+.inText {
+    display: block;
+    text-indent: 6.6em;
+    width: 93%;
+    letter-spacing: -3px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.inText:empty:before {
+    content: attr(placeholder);
+    color: #999;
+}
+
+.inTitile{
+    position: absolute;
+    top: 0.18em;
+    display: inline-block;
+    width: 6em;
+}
+
+.btn, #cont, #aboutCont, footer, #about{
+    text-align: center;
+}
+
+.btn:hover{
+    background-color: rgb(27,134,219);
+    box-shadow: 0px 0px 1.5px #666;
+}
+
+.btn:active{
+    background-color: rgb(101,79,240);
+    box-shadow: 0px 0px 2.1px #666;
+}
+
+.btn > p, footer > p{
+    margin:0;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding: 0.6vh;
+}
+
+.btn > p{
+    font-size: 3.6vh;
+    padding: 1.5vh;
+    font-weight: 500;
+}
+
+.btn:hover{
+    cursor: pointer;
+
+}
+
+.orow{
+    border-top: solid 2px #999;
+}
+
+html, body{
+    background-color: #333;
+    margin: 0;
+    height: 100vh; 
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+}
+
+#cont{
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: var(--cont-width);
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;   
+    margin: 0 auto;
+    position: relative;
+}
+
+#cont > div{
+    width: var(--cont-width);
+    border-bottom: solid 2px #666;
+}
+
+#head{
+    text-align: left;
+    padding-bottom: 1vh;
+}
+
+#tt{
+    
+    font-weight: 630;
+    
+    margin: 4vh auto 2.7vh 8.4%;
+}
+
+#pw{
+    font-size: 27.9px;
+    color: #333;
+    position: absolute;
+    top: calc(var(--cont-width) * 0.18 + 9vh);
+    right: 11%;
+    font-weight: 600;
+    margin: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#head > img{
+    margin-left: 10%;
+    width: 66.7%;
+    height: auto;
+}
+
+#out{
+    display: none;
+    box-shadow: 0px 0px 2.1px #666;
+    background-color: rgb(101,79,240);
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+}
+
+#out:first-child{
+    border: none !important;
+}
+
+#cls{
+    display: none;
+}
+
+footer {
+    margin-top: auto;
+    font-size: 16px;
+    margin-bottom: 2vh;
+}
+
+svg {
+    display: inline-flex;
+    align-self: center;
+    bottom: -0.125em;
+    position: relative;
+    height: 1em;
+    width: 1em;
+}
+
+::-webkit-scrollbar {
+    width: 10px;    
+    height: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+
+#aboutCont{
+    width: var(--cont-width);
+    top: 0px;
+    left: 0;
+    right:0;
+    height: 100vh;
+    margin: 0 auto;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+}
+
+#about{
+    width: var(--cont-width);
+    height: auto;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border-radius: 1em;
+    transform:translate(-50%,-50%);
+}
+
+#about > img{
+    width: calc(var(--cont-width)*0.72);
+    margin-bottom: 1em;
+}
+
+#abbtn:hover{
+    cursor: pointer;
+}
