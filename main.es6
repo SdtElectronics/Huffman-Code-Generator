@@ -19,6 +19,7 @@ function supportWasm(){
 };
 
 gen.onclick = ()=>{
+    dsp.innerHTML = "";
     const probs = prb.textContent.split(",").map(prob => parseFloat(prob));
     const syms = sym.textContent.split(",").map(sym => parseInt(sym));
     getHFC(probs, syms).forEach((code, i) => {
@@ -32,6 +33,7 @@ gen.onclick = ()=>{
 }
 
 cls.onclick = ()=>{
+    dsp.innerHTML = "";
     prb.textContent = "";
     sym.textContent = "";
     dsp.style.display = "none";

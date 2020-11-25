@@ -1,10 +1,30 @@
+@media screen and (max-width:520px){
+    :root {
+        --cont-width: 100vw;
+    }
+}
+
+@media screen and (min-width:960px){
+    :root {
+        --cont-width: max(36vw, 520px);
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
 .div{
     padding: 0px;
     height: auto;
 }
 
 .in, .orow{
-    padding: 1.2vh 1.5vw 1.2vh 1.5vw;
+    padding: 1.5vh 1.5vw 1.5vh 1.5vw;
     font-size: 3.3vh;
     font-weight: 480;
     text-align: left;
@@ -12,7 +32,9 @@
 
 .inText {
     display: inline-block;
-    width: calc(36vw - 6em - 3vw);
+    width: calc(var(--cont-width) - 6em - 3vw);
+    letter-spacing: -3px;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .inText:empty:before {
@@ -31,11 +53,15 @@
 
 .btn > p, footer > p{
     margin:0;
-    padding: 1.5vh;
     display: inline-block;
     vertical-align: middle;
     text-align: left;
+    padding: 0.6vh;
+}
+
+.btn > p{
     font-size: 3.6vh;
+    padding: 1.5vh;
     font-weight: 500;
 }
 
@@ -60,7 +86,7 @@ html, body{
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    width: 36vw;
+    width: var(--cont-width);
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;   
@@ -69,7 +95,7 @@ html, body{
 }
 
 #cont > div{
-    width: 36vw;
+    width: var(--cont-width);
     border-bottom: solid 2px #666;
 }
 
@@ -79,25 +105,26 @@ html, body{
 }
 
 #tt{
-    font-size: 3.3vw;
+    font-size: 51px;
     font-weight: 630;
     
-    margin: 4vh auto 2.7vh 3vw;
+    margin: 4vh auto 2.7vh 8.4%;
 }
 
 #pw{
-    font-size: 1.8vw;
+    font-size: 27.9px;
     color: #333;
     position: absolute;
-    top: calc(6.6vw + 9vh);
-    right: 3.9vw;
-    font-weight: 480;
+    top: calc(102px + 9vh);
+    right: 11%;
+    font-weight: 600;
     margin: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
 #head > img{
-    margin-left: 3.6vw;
-    width: 24vw;
+    margin-left: 10%;
+    width: 66.7%;
     height: auto;
 }
 
@@ -115,6 +142,17 @@ html, body{
 
 footer {
     margin-top: auto;
+
+    margin-bottom: 2vh;
+}
+
+svg {
+    display: inline-flex;
+    align-self: center;
+    bottom: -0.125em;
+    position: relative;
+    height: 1em;
+    width: 1em;
 }
 
 ::-webkit-scrollbar {
