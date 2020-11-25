@@ -3,7 +3,9 @@ const sym = document.getElementById("symsIn"),
       gen = document.getElementById("gen"),
       dsp = document.getElementById("out"),
       cls = document.getElementById("cls"),
-      otp = document.getElementById("outRowTmpl");
+      otp = document.getElementById("outRowTmpl"),
+      abt = document.getElementById("abbtn")
+      abc = document.getElementById("aboutCont");
 
 function supportWasm(){
     try {
@@ -51,6 +53,14 @@ cls.onclick = ()=>{
     dsp.style.display = "none";
     cls.style.display = "none";
 }
+
+abc.onclick = ()=>{
+    abc.style.display = "none";
+}
+
+abt.onclick = () => {
+	abc.style.display = "block";
+};
 
 window.onload = ()=>{
     if(!supportWasm()){
