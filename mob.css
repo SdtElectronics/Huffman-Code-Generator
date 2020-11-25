@@ -122,7 +122,7 @@ html, body{
 }
 
 #pw{
-    font-size: 27.9px;
+    font-size: 4.8vw;
     color: #333;
     position: absolute;
     top: calc(var(--cont-width) * 0.18 + 9vh);
@@ -156,7 +156,7 @@ html, body{
 
 footer {
     margin-top: auto;
-    font-size: 16px;
+    font-size: 1.2em;
     margin-bottom: 1em;
 }
 
@@ -212,7 +212,7 @@ svg {
 }
 
 #about > p{
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin: 0.6em;
 }
 
